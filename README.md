@@ -11,6 +11,7 @@ de pruebas más recomendado del ecosistema Python.
 | Módulo | Descripción |
 | ------ | ----------- |
 | [`core/foundations/`](core/foundations/) | **Fase 0 — Fundamentos**: `helloworld`, `hellouser`, `unit_test/calculator`, `numbers` |
+| [`core/algorithms/`](core/algorithms/) | **Fase 1 — Algoritmos Puros**: `naive_sort` |
 
 ---
 
@@ -31,6 +32,10 @@ pytest test/
 
 # Numbers Tests
 cd core/foundations/numbers
+pytest
+
+# Naive Sort Tests
+cd core/algorithms/naive_sort
 pytest
 ```
 
