@@ -11,6 +11,7 @@ Los módulos de esta fase trabajan sobre **listas mutables**, que se ordenan **i
 | Módulo | Especificación | Enfoque | Tests | Estado |
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `pytest` | 3 | ✅ |
+| [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `pytest` | 4 | ✅ |
 
 ---
 
@@ -18,14 +19,28 @@ Los módulos de esta fase trabajan sobre **listas mutables**, que se ordenan **i
 
 ```text
 algorithms/
-└── naive_sort/                      # 05_Naive_Sort
+├── naive_sort/                      # 05_Naive_Sort
+│   ├── pyproject.toml               # Librería (PEP 621) + configuración de pytest
+│   ├── conftest.py                  # sys.path para tests
+│   ├── .gitignore                   # Ignora artefactos
+│   ├── src/
+│   │   └── naive_sort.py            # 3 funciones del contrato
+│   ├── tests/
+│   │   └── naive_sort_tests.py      # 3 tests × 8 casos
+│   └── README.md
+└── data_structures_basics/          # 06_Data_Structures_Basics
     ├── pyproject.toml               # Librería (PEP 621) + configuración de pytest
     ├── conftest.py                  # sys.path para tests
-    ├── .gitignore                   # Ignora artefactos
     ├── src/
-    │   └── naive_sort.py            # 3 funciones del contrato
+    │   └── data_structures_basics/
+    │       ├── __init__.py          # Exporta Node, LinkedList, Stack, Queue
+    │       ├── node.py              # Celda enlazada compartida
+    │       ├── linked_list.py       # Lista simplemente enlazada
+    │       ├── stack.py             # Pila LIFO independiente
+    │       ├── queue.py             # Cola FIFO independiente
+    │       └── py.typed             # Marcador PEP 561
     ├── tests/
-    │   └── naive_sort_tests.py      # 3 tests × 8 casos
+    │   └── data_structures_basics_tests.py # 4 tests (Node, LinkedList, Stack, Queue)
     └── README.md
 ```
 
@@ -59,6 +74,10 @@ algorithms/
 ```bash
 # Naive Sort Tests
 cd naive_sort
+pytest
+
+# Data Structures Basics Tests
+cd ../data_structures_basics
 pytest
 ```
 

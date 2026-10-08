@@ -1,0 +1,18 @@
+[project]
+name = "data-structures-basics"
+version = "0.1.0"
+description = "Node, LinkedList, Stack and Queue over a shared linked node, with pytest."
+readme = "README.md"
+authors = [
+    { name = "yorche3", email = "hyaoki123@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["*_tests.py"]
