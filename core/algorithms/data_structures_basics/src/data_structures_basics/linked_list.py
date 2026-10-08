@@ -24,7 +24,7 @@ class LinkedList:
     @property
     def head(self) -> int:
         """Valor de la cabeza, o -1 con la lista vacía (`get_head`)."""
-        return -1
+        return self._head.value if self._head is not None else -1
 
     @property
     def head_node(self) -> Node | None:
@@ -32,24 +32,49 @@ class LinkedList:
 
         Es el punto de partida del recorrido del contrato (`get_next`).
         """
-        return None
+        return self._head
 
     def insert_head(self, value: int) -> None:
         """Inserta el valor al principio de la lista (`insert_head`)."""
-        return None
+        new_head = Node(value)
+        new_head.next = self._head
+        self._head = new_head
+        if self._tail is None:
+            self._tail = new_head
+        self._count += 1
 
     def insert_tail(self, value: int) -> None:
         """Inserta el valor al final de la lista (`insert_tail`)."""
-        return None
+        new_tail = Node(value)
+        if self._tail is not None:
+            self._tail.next = new_tail
+        self._tail = new_tail
+        if self._head is None:
+            self._head = new_tail
+        self._count += 1
 
     def delete(self, value: int) -> bool:
         """Elimina la primera aparición: `True` si estaba, `False` si no."""
+        prev: Node | None = None
+        current = self._head
+        while current is not None:
+            if current.value == value:
+                if prev is None:
+                    self._head = current.next
+                else:
+                    prev.next = current.next
+                if current.next is None:
+                    self._tail = prev
+                self._count -= 1
+                return True
+            prev = current
+            current = current.next
         return False
 
     def is_empty(self) -> bool:
         """Cierto exactamente cuando la lista no tiene nodos."""
-        return False
+        return self._count == 0
 
     def size(self) -> int:
         """Número de nodos de la lista (`size`)."""
-        return 0
+        return self._count

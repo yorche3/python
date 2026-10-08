@@ -21,20 +21,29 @@ class Stack:
 
     def push(self, value: int) -> None:
         """Apila el valor sobre el tope (`push`)."""
+        new_top = Node(value)
+        new_top.next = self._top
+        self._top = new_top
+        self._count += 1
         return None
 
     def pop(self) -> int:
         """Extrae el tope, o -1 si la pila está vacía (`pop`)."""
-        return -1
+        if self._top is None:
+            return -1
+        value = self._top.value
+        self._top = self._top.next
+        self._count -= 1
+        return value
 
     def peek(self) -> int:
         """Observa el tope sin extraerlo, o -1 si la pila está vacía (`peek`)."""
-        return -1
+        return self._top.value if self._top is not None else -1
 
     def is_empty(self) -> bool:
         """Cierto exactamente cuando la pila no tiene nodos."""
-        return False
+        return self._count == 0
 
     def size(self) -> int:
         """Número de nodos de la pila (`size`)."""
-        return 0
+        return self._count

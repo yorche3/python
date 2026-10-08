@@ -22,20 +22,34 @@ class Queue:
 
     def enqueue(self, value: int) -> None:
         """Añade el valor por el final de la cola (`enqueue`)."""
+        new_rear = Node(value)
+        if self._rear is not None:
+            self._rear.next = new_rear
+        self._rear = new_rear
+        if self._front is None:
+            self._front = new_rear
+        self._count += 1
         return None
 
     def dequeue(self) -> int:
         """Extrae el frente, o -1 si la cola está vacía (`dequeue`)."""
-        return -1
+        if self._front is None:
+            return -1
+        value = self._front.value
+        self._front = self._front.next
+        if self._front is None:
+            self._rear = None
+        self._count -= 1
+        return value
 
     def peek(self) -> int:
         """Observa el frente sin extraerlo, o -1 si la cola está vacía (`peek`)."""
-        return -1
+        return self._front.value if self._front is not None else -1
 
     def is_empty(self) -> bool:
         """Cierto exactamente cuando la cola no tiene nodos."""
-        return False
+        return self._count == 0
 
     def size(self) -> int:
         """Número de nodos de la cola (`size`)."""
-        return 0
+        return self._count
