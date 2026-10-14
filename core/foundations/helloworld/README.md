@@ -8,13 +8,13 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`helloworld.py`](helloworld.py) | Código fuente: imprime `"Hello, World! from Python!"` en la salida estándar. |
+| [`hello_world.py`](hello_world.py) | Código fuente: imprime `"Hello, World! from Python!"` en la salida estándar. |
 
 **Estructura de directorios esperada:**
 
 ```text
 helloworld/
-├── helloworld.py   # Código fuente
+├── hello_world.py   # Código fuente
 └── README.md       # Este archivo
 ```
 
@@ -34,7 +34,7 @@ helloworld/
    mkdir -p python/core/foundations/helloworld
    ```
 
-2. Escribir el archivo `helloworld.py` con el código fuente.
+2. Escribir el archivo `hello_world.py` con el código fuente.
 
 3. No se necesita ningún paso adicional de construcción o vinculación de dependencias.
 
@@ -71,13 +71,13 @@ python3 --version
 
 ```bash
 cd python/core/foundations/helloworld
-python3 helloworld.py
+python3 hello_world.py
 ```
 
 ### Verificar sintaxis sin ejecutar / Check syntax without running
 
 ```bash
-python3 -m py_compile helloworld.py
+python3 -m py_compile hello_world.py
 ```
 
 ### Salida esperada / Expected output
