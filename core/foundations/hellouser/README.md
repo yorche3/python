@@ -10,13 +10,13 @@ Lee un nombre desde la entrada estándar y saluda al usuario.
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`hellouser.py`](hellouser.py) | Código fuente: solicita un nombre al usuario y saluda. |
+| [`hello_user.py`](hello_user.py) | Código fuente: solicita un nombre al usuario y saluda. |
 
 **Estructura de directorios esperada:**
 
 ```text
 hellouser/
-├── hellouser.py    # Código fuente
+├── hello_user.py    # Código fuente
 └── README.md       # Este archivo
 ```
 
@@ -44,7 +44,7 @@ hellouser/
    mkdir -p python/core/foundations/hellouser
    ```
 
-2. Escribir el archivo `hellouser.py` con el código fuente.
+2. Escribir el archivo `hello_user.py` con el código fuente.
 
 3. No se necesita ningún paso adicional de construcción o vinculación de dependencias.
 
@@ -95,13 +95,13 @@ python3 --version
 
 ```bash
 cd python/core/foundations/hellouser
-python3 hellouser.py
+python3 hello_user.py
 ```
 
 ### Verificar sintaxis sin ejecutar / Check syntax without running
 
 ```bash
-python3 -m py_compile hellouser.py
+python3 -m py_compile hello_user.py
 ```
 
 ### Salida esperada / Expected output
