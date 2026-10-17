@@ -6,8 +6,8 @@ from .node import Node
 class LinkedList:
     """Lista simplemente enlazada con referencias a cabeza, cola y contador.
 
-    Esqueleto del contrato: el algoritmo es del paso 5. Mientras no lo haya, cada
-    operación devuelve su indicador.
+    Contrato completo: cada operación está resuelta sobre el `Node` común; los
+    enlaces ausentes son `None` y las lecturas fallibles devuelven -1.
 
     Adecuaciones: los enlaces ausentes son `None`, que solo se usa para nodos;
     `head` devuelve -1 y `head_node` devuelve `None` con la lista vacía; `delete`

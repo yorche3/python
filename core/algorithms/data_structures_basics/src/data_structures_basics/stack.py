@@ -6,8 +6,8 @@ from .node import Node
 class Stack:
     """Pila LIFO independiente sobre `Node`: no envuelve `LinkedList`.
 
-    Esqueleto del contrato: el algoritmo es del paso 5. Mientras no lo haya, cada
-    operación devuelve su indicador.
+    Contrato completo: cada operación está resuelta sobre el `Node` común; los
+    enlaces ausentes son `None` y las lecturas fallibles devuelven -1.
 
     Adecuaciones: `pop` y `peek` devuelven -1 con la pila vacía, `is_empty`
     devuelve un booleano y `size` devuelve 0; el enlace ausente es `None`.

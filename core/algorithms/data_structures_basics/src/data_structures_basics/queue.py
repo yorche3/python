@@ -6,8 +6,8 @@ from .node import Node
 class Queue:
     """Cola FIFO independiente sobre `Node`: no envuelve `LinkedList`.
 
-    Esqueleto del contrato: el algoritmo es del paso 5. Mientras no lo haya, cada
-    operación devuelve su indicador.
+    Contrato completo: cada operación está resuelta sobre el `Node` común; los
+    enlaces ausentes son `None` y las lecturas fallibles devuelven -1.
 
     Adecuaciones: `dequeue` y `peek` devuelven -1 con la cola vacía, `is_empty`
     devuelve un booleano y `size` devuelve 0; los enlaces ausentes son `None`.
