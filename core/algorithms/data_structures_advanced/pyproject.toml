@@ -1,7 +1,7 @@
 [project]
 name = "data-structures-advanced"
 version = "0.1.0"
-description = "Add your description here"
+description = "Node, TreeNode, GraphNode, BinaryTree and Graph, with pytest."
 readme = "README.md"
 authors = [
     { name = "yorche3", email = "hyaoki123@gmail.com" }
@@ -12,3 +12,13 @@ dependencies = []
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["*_tests.py"]
+
