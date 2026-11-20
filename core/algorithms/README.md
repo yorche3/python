@@ -12,6 +12,7 @@ Los módulos de esta fase trabajan sobre **listas mutables**, que se ordenan **i
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `pytest` | 3 | ✅ |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `pytest` | 4 | ✅ |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | `pytest` | 23 | ✅ |
 
 ---
 
@@ -28,19 +29,35 @@ algorithms/
 │   ├── tests/
 │   │   └── naive_sort_tests.py      # 3 tests × 8 casos
 │   └── README.md
-└── data_structures_basics/          # 06_Data_Structures_Basics
+├── data_structures_basics/          # 06_Data_Structures_Basics
+│   ├── pyproject.toml               # Librería (PEP 621) + configuración de pytest
+│   ├── conftest.py                  # sys.path para tests
+│   ├── src/
+│   │   └── data_structures_basics/
+│   │       ├── __init__.py          # Exporta Node, LinkedList, Stack, Queue
+│   │       ├── node.py              # Celda enlazada compartida
+│   │       ├── linked_list.py       # Lista simplemente enlazada
+│   │       ├── stack.py             # Pila LIFO independiente
+│   │       ├── queue.py             # Cola FIFO independiente
+│   │       └── py.typed             # Marcador PEP 561
+│   ├── tests/
+│   │   └── data_structures_basics_tests.py # 4 tests (Node, LinkedList, Stack, Queue)
+│   └── README.md
+└── data_structures_advanced/        # 07_Data_Structures_Advanced
     ├── pyproject.toml               # Librería (PEP 621) + configuración de pytest
     ├── conftest.py                  # sys.path para tests
+    ├── .gitignore                   # Ignora artefactos
     ├── src/
-    │   └── data_structures_basics/
-    │       ├── __init__.py          # Exporta Node, LinkedList, Stack, Queue
-    │       ├── node.py              # Celda enlazada compartida
-    │       ├── linked_list.py       # Lista simplemente enlazada
-    │       ├── stack.py             # Pila LIFO independiente
-    │       ├── queue.py             # Cola FIFO independiente
+    │   └── data_structures_advanced/
+    │       ├── __init__.py          # Exporta Node, TreeNode, BinaryTree, Graph
+    │       ├── node.py              # Clase base Node con valor
+    │       ├── tree_node.py         # Nodo de árbol con left y right
+    │       ├── graph_node.py        # Nodo de grafo con adyacencia y registro
+    │       ├── binary_tree.py       # Árbol binario de búsqueda (BST)
+    │       ├── graph.py             # Grafo dirigido con registro enlazado
     │       └── py.typed             # Marcador PEP 561
     ├── tests/
-    │   └── data_structures_basics_tests.py # 4 tests (Node, LinkedList, Stack, Queue)
+    │   └── data_structures_advanced_tests.py # 23 tests (TreeNode, BinaryTree, Graph)
     └── README.md
 ```
 
@@ -78,6 +95,10 @@ pytest
 
 # Data Structures Basics Tests
 cd ../data_structures_basics
+pytest
+
+# Data Structures Advanced Tests
+cd ../data_structures_advanced
 pytest
 ```
 
