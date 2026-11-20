@@ -1,7 +1,7 @@
 class Node:
     def __init__(self, value: int) -> None:
-        return None
+        self._value = value
 
     @property
-    def value(self) -> int | None:
-        return None
+    def value(self) -> int:
+        return self._value
